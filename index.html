@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHITE PROJECT // SYSTEM</title>
+    <style>
+        body { background: #000; color: #00e5ff; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
+        .box { border: 2px solid #00e5ff; padding: 20px; border-radius: 15px; background: rgba(0, 229, 255, 0.05); max-width: 400px; margin: auto; box-shadow: 0 0 15px #00e5ff44; }
+        input, select { background: #111; color: #00e5ff; border: 1px solid #00e5ff; padding: 10px; margin: 10px; width: 85%; }
+        .btn { background: #00e5ff; color: #000; padding: 15px; border: none; font-weight: bold; width: 90%; cursor: pointer; text-transform: uppercase; }
+        .status { border: 1px dashed #00e5ff; padding: 10px; margin-top: 20px; display: none; text-align: left; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>[ MONARCH SYSTEM ]</h1>
+        <p>IDENTIFY YOURSELF, SOLDIER</p>
+        <input type="text" id="user" placeholder="CODENAME (Ex: White Ghost)">
+        <input type="time" id="time">
+        <select id="task">
+            <option value="2KM Run">QUEST: 2KM MORNING RUN</option>
+            <option value="Pushups">QUEST: 100 PUSH-UPS</option>
+            <option value="Study">QUEST: SSC GD PREP (2 HRS)</option>
+        </select>
+        <button class="btn" onclick="start()">INITIALIZE PROTOCOL</button>
+        <div id="statusBox" class="status">
+            <b>PLAYER:</b> <span id="outUser"></span><br>
+            <b>TARGET:</b> <span id="outTask"></span> BY <span id="outTime"></span><br>
+            <b style="color:#0f0;">STATUS: MONITORING ACTIVE...</b>
+        </div>
+    </div>
+    <script>
+        function start() {
+            let u = document.getElementById('user').value;
+            let t = document.getElementById('time').value;
+            let k = document.getElementById('task').value;
+            if(!u || !t) { alert("ERROR: INPUT DATA MISSING."); return; }
+            document.getElementById('outUser').innerText = u;
+            document.getElementById('outTime').innerText = t;
+            document.getElementById('outTask').innerText = k;
+            document.getElementById('statusBox').style.display = 'block';
+            alert("Protocol Established. Do not fail the mission.");
+        }
+    </script>
+</body>
+  </html>
 
